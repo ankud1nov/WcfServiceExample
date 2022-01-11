@@ -17,6 +17,8 @@ namespace WcfServiceExample
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
+        [OperationContract]
+        ContractInfo[] GetContractsInfo();
         // TODO: Добавьте здесь операции служб
     }
 
@@ -41,5 +43,18 @@ namespace WcfServiceExample
             get { return stringValue; }
             set { stringValue = value; }
         }
+    }
+
+    [DataContract]
+    public class ContractInfo
+    {
+        [DataMember]
+        public int Id { get; set; }
+        [DataMember]
+        public string Number { get; set; }
+        [DataMember]
+        public DateTime CreateDateTime { get; set; }
+        [DataMember]
+        public DateTime LastEditDateTime { get; set; }
     }
 }

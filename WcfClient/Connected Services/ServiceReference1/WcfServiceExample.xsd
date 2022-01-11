@@ -7,4 +7,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CompositeType" nillable="true" type="tns:CompositeType" />
+  <xs:complexType name="ArrayOfContractInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContractInfo" nillable="true" type="tns:ContractInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContractInfo" nillable="true" type="tns:ArrayOfContractInfo" />
+  <xs:complexType name="ContractInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LastEditDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContractInfo" nillable="true" type="tns:ContractInfo" />
 </xs:schema>

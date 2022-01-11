@@ -19,6 +19,12 @@
   <wsdl:message name="IContractsInfoService_GetDataUsingDataContract_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
   </wsdl:message>
+  <wsdl:message name="IContractsInfoService_GetContractsInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContractsInfo" />
+  </wsdl:message>
+  <wsdl:message name="IContractsInfoService_GetContractsInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContractsInfoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IContractsInfoService">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IContractsInfoService/GetData" message="tns:IContractsInfoService_GetData_InputMessage" />
@@ -27,6 +33,10 @@
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IContractsInfoService/GetDataUsingDataContract" message="tns:IContractsInfoService_GetDataUsingDataContract_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IContractsInfoService/GetDataUsingDataContractResponse" message="tns:IContractsInfoService_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContractsInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContractsInfoService/GetContractsInfo" message="tns:IContractsInfoService_GetContractsInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContractsInfoService/GetContractsInfoResponse" message="tns:IContractsInfoService_GetContractsInfo_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IContractsInfoService" type="tns:IContractsInfoService">
@@ -42,6 +52,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <soap:operation soapAction="http://tempuri.org/IContractsInfoService/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractsInfo">
+      <soap:operation soapAction="http://tempuri.org/IContractsInfoService/GetContractsInfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
