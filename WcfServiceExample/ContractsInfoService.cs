@@ -27,7 +27,7 @@ namespace WcfServiceExample
             }
             else
             {
-                composite.StringValue += "fasle";
+                composite.StringValue += "false";
             }
             return composite;
         }
@@ -35,35 +35,30 @@ namespace WcfServiceExample
         public ContractInfo[] GetContractsInfo()
         {
             var ctx = new ContractsInfoContext();
-            //ctx.Database.CreateIfNotExists();
 
-            if (ctx.ContractsInfo.Count() > 200)
-            {
-                var range = ctx.ContractsInfo.ToList();
-                ctx.ContractsInfo.RemoveRange(range);
-                ctx.SaveChanges();
-            }
-            
             if (!ctx.ContractsInfo.Any())
-            {
-                List<ContractInfo> contractInfoList = new List<ContractInfo>();
-                for (int i = 0; i < 100; i++)
-                {
-                    contractInfoList.Add(
-                        new ContractInfo()
-                        {
-                            Id = i,
-                            Number = (i).ToString(),
-                            CreateDateTime = DateTime.Today.AddDays(-i),
-                            LastEditDateTime = (i % 10 == 0) ? DateTime.Today : DateTime.Today.AddDays(-i)
-                        });
-                }
-                ctx.ContractsInfo.AddRange(contractInfoList);
-                ctx.SaveChanges();
-            }
+                CreateTestContracts(ctx);
 
             var forReturn = ctx.ContractsInfo.ToArray();
             return forReturn;
+        }
+
+        public void CreateTestContracts(ContractsInfoContext context)
+        {
+            List<ContractInfo> contractInfoList = new List<ContractInfo>();
+            for (int i = 0; i < 100; i++)
+            {
+                contractInfoList.Add(
+                    new ContractInfo()
+                    {
+                        Id = i,
+                        Number = (i).ToString(),
+                        CreateDateTime = DateTime.Today.AddDays(-i),
+                        LastEditDateTime = (i % 10 == 0) ? DateTime.Today : DateTime.Today.AddDays(-i)
+                    });
+            }
+            context.ContractsInfo.AddRange(contractInfoList);
+            context.SaveChanges();
         }
     }
 }
