@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WcfClient"
         mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance local:MainWindowViewModel}"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
+
     <Grid>
-        
+        <DataGrid x:Name="Contracts" ItemsSource="{Binding Contracts}" Margin="10,2" AutoGenerateColumns="False"  ClipboardCopyMode="ExcludeHeader">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="Number" Header="Номер договора" Binding="{Binding Number}" Width="130"/>
+                <DataGridTextColumn x:Name="CreateDate" Header="Дата создания" Binding="{Binding CreateDateTime}" Width="140"/>
+                <DataGridTextColumn x:Name="EditDate" Header="Дата последнего редактирования" Binding="{Binding LastEditDateTime}" MinWidth="140"/>
+                <DataGridCheckBoxColumn x:Name="Actuality" Header="Актуальность" Binding="{Binding Actuality}" MinWidth="140"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
