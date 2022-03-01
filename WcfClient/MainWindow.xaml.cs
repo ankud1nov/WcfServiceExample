@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.ServiceModel;
+using System.Threading.Tasks;
 using System.Windows;
 using WcfClient.ServiceReference1;
 using WcfServiceExample;
@@ -24,27 +25,44 @@ namespace WcfClient
 
     class MainWindowViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<ContractInfoForView> Contracts { get; set; }
+        private ObservableCollection<ContractInfoForView> _contracts;
+
+        public ObservableCollection<ContractInfoForView> Contracts 
+        { 
+            get => _contracts;
+            set
+            {
+                _contracts = value;
+                OnPropertyChanged(nameof(Contracts));
+            }
+        }
 
         public MainWindowViewModel()
         {
-            var client = new ContractsInfoServiceClient(new WSHttpBinding() ,new EndpointAddress("http://localhost:5577/ContractsInfoService/ContractsInfoService"));
+            //Task.Run(MainWindowConfigure).ConfigureAwait(true);
+            var client = new ContractsInfoServiceClient(new WSHttpBinding(), new EndpointAddress("http://localhost:5577/ContractsInfoService"));
             Contracts = new ObservableCollection<ContractInfoForView>();
             try
             {
                 //client.Endpoint.Contract
-                var contractInfos = client.GetContractsInfo();
+                var contractInfos = client.GetContractsInfoAsync().Result;
                 var qwe = contractInfos.ToList().Select(x => new ContractInfoForView(x));
                 foreach (var contractInfo in qwe)
                 {
                     Contracts.Add(contractInfo);
                 }
+                OnPropertyChanged();
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
         }
+
+        //private async Task MainWindowConfigure()
+        //{
+            
+        //}
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")

@@ -26,7 +26,7 @@ namespace SeviceForm
             try
             {
                 // Step 3: Add a service endpoint.
-                _selfHost.AddServiceEndpoint(typeof(IContractsInfoService), new WSHttpBinding(), "ContractsInfoService");
+                _selfHost.AddServiceEndpoint(typeof(IContractsInfoService), new WSHttpBinding(), baseAddress);
 
                 // Step 4: Enable metadata exchange.
                 ServiceMetadataBehavior smb = new ServiceMetadataBehavior();

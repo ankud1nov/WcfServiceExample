@@ -17,7 +17,7 @@
                 <DataGridTextColumn x:Name="Number" Header="Номер договора" Binding="{Binding Number}" Width="130"/>
                 <DataGridTextColumn x:Name="CreateDate" Header="Дата создания" Binding="{Binding CreateDateTime}" Width="140"/>
                 <DataGridTextColumn x:Name="EditDate" Header="Дата последнего редактирования" Binding="{Binding LastEditDateTime}" MinWidth="140"/>
-                <DataGridCheckBoxColumn x:Name="Actuality" Header="Актуальность" Binding="{Binding Actuality}" MinWidth="140"/>
+                <DataGridCheckBoxColumn x:Name="Actuality" Header="Актуальность" Binding="{Binding Actuality}" IsReadOnly="True" MinWidth="140"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
