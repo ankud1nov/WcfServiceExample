@@ -28,7 +28,7 @@ namespace WcfClient
 
         public MainWindowViewModel()
         {
-            var client = new ContractsInfoServiceClient(new BasicHttpBinding() ,new EndpointAddress("http://localhost:5577/ContractsInfoService"));
+            var client = new ContractsInfoServiceClient(new WSHttpBinding() ,new EndpointAddress("http://localhost:5577/ContractsInfoService/ContractsInfoService"));
             Contracts = new ObservableCollection<ContractInfoForView>();
             try
             {
