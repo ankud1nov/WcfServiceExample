@@ -4,8 +4,10 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.ServiceModel;
 using System.Windows;
 using WcfClient.ServiceReference1;
+using WcfServiceExample;
 
 namespace WcfClient
 {
@@ -26,11 +28,21 @@ namespace WcfClient
 
         public MainWindowViewModel()
         {
-            var client = new ContractsInfoServiceClient();
+            var client = new ContractsInfoServiceClient(new BasicHttpBinding() ,new EndpointAddress("http://localhost:5577/ContractsInfoService"));
             Contracts = new ObservableCollection<ContractInfoForView>();
-            foreach (var contractInfo in client.GetContractsInfo().ToList())
+            try
             {
-                Contracts.Add(new ContractInfoForView(contractInfo));
+                //client.Endpoint.Contract
+                var contractInfos = client.GetContractsInfo();
+                var qwe = contractInfos.ToList().Select(x => new ContractInfoForView(x));
+                foreach (var contractInfo in qwe)
+                {
+                    Contracts.Add(contractInfo);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
             }
         }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fcce9ef2-910e-465d-9638-b561ef4ac353" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a9c3bfd9-a242-40dd-8f0d-1205a49fe85d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,10 +22,10 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/WcfServiceExample/ContractsInfoService/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="1e40ddd3-a517-4412-8a5f-aee3110f9d17" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfServiceExample/ContractsInfoService/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="9e5d5418-598d-4cf4-a80f-019f060390da" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfServiceExample/ContractsInfoService/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="32648f2b-24c3-4f8d-8d31-19fef50150df" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfServiceExample/ContractsInfoService/mex" />
-    <MetadataFile FileName="WcfServiceExample.xsd" MetadataType="Schema" ID="64d51432-9c57-4a83-9a45-81d4e63fbd53" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfServiceExample/ContractsInfoService/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="cccfbc8c-464e-4b0b-88ba-a31c9bdf662c" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfServiceExample/ContractsInfoService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="ecec3662-7471-48ec-876b-6cd1bf6a884f" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfServiceExample/ContractsInfoService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="51de64dd-4989-449e-a5a3-0cea5be67901" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfServiceExample/ContractsInfoService/mex" />
+    <MetadataFile FileName="WcfServiceExample.xsd" MetadataType="Schema" ID="152218ba-fc60-4487-966c-80a292260040" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfServiceExample/ContractsInfoService/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

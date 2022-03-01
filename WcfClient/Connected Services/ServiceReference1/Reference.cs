@@ -9,163 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace WcfClient.ServiceReference1 {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/WcfServiceExample")]
-    [System.SerializableAttribute()]
-    public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool BoolValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StringValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool BoolValue {
-            get {
-                return this.BoolValueField;
-            }
-            set {
-                if ((this.BoolValueField.Equals(value) != true)) {
-                    this.BoolValueField = value;
-                    this.RaisePropertyChanged("BoolValue");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StringValue {
-            get {
-                return this.StringValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StringValueField, value) != true)) {
-                    this.StringValueField = value;
-                    this.RaisePropertyChanged("StringValue");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ContractInfo", Namespace="http://schemas.datacontract.org/2004/07/WcfServiceExample")]
-    [System.SerializableAttribute()]
-    public partial class ContractInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CreateDateTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime LastEditDateTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NumberField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreateDateTime {
-            get {
-                return this.CreateDateTimeField;
-            }
-            set {
-                if ((this.CreateDateTimeField.Equals(value) != true)) {
-                    this.CreateDateTimeField = value;
-                    this.RaisePropertyChanged("CreateDateTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime LastEditDateTime {
-            get {
-                return this.LastEditDateTimeField;
-            }
-            set {
-                if ((this.LastEditDateTimeField.Equals(value) != true)) {
-                    this.LastEditDateTimeField = value;
-                    this.RaisePropertyChanged("LastEditDateTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Number {
-            get {
-                return this.NumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NumberField, value) != true)) {
-                    this.NumberField = value;
-                    this.RaisePropertyChanged("Number");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IContractsInfoService")]
@@ -178,16 +22,16 @@ namespace WcfClient.ServiceReference1 {
         System.Threading.Tasks.Task<string> GetDataAsync(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IContractsInfoService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IContractsInfoService/GetDataUsingDataContractResponse")]
-        WcfClient.ServiceReference1.CompositeType GetDataUsingDataContract(WcfClient.ServiceReference1.CompositeType composite);
+        WcfServiceExample.CompositeType GetDataUsingDataContract(WcfServiceExample.CompositeType composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IContractsInfoService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IContractsInfoService/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<WcfClient.ServiceReference1.CompositeType> GetDataUsingDataContractAsync(WcfClient.ServiceReference1.CompositeType composite);
+        System.Threading.Tasks.Task<WcfServiceExample.CompositeType> GetDataUsingDataContractAsync(WcfServiceExample.CompositeType composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IContractsInfoService/GetContractsInfo", ReplyAction="http://tempuri.org/IContractsInfoService/GetContractsInfoResponse")]
-        WcfClient.ServiceReference1.ContractInfo[] GetContractsInfo();
+        WcfServiceExample.ContractInfo[] GetContractsInfo();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IContractsInfoService/GetContractsInfo", ReplyAction="http://tempuri.org/IContractsInfoService/GetContractsInfoResponse")]
-        System.Threading.Tasks.Task<WcfClient.ServiceReference1.ContractInfo[]> GetContractsInfoAsync();
+        System.Threading.Tasks.Task<WcfServiceExample.ContractInfo[]> GetContractsInfoAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -225,19 +69,19 @@ namespace WcfClient.ServiceReference1 {
             return base.Channel.GetDataAsync(value);
         }
         
-        public WcfClient.ServiceReference1.CompositeType GetDataUsingDataContract(WcfClient.ServiceReference1.CompositeType composite) {
+        public WcfServiceExample.CompositeType GetDataUsingDataContract(WcfServiceExample.CompositeType composite) {
             return base.Channel.GetDataUsingDataContract(composite);
         }
         
-        public System.Threading.Tasks.Task<WcfClient.ServiceReference1.CompositeType> GetDataUsingDataContractAsync(WcfClient.ServiceReference1.CompositeType composite) {
+        public System.Threading.Tasks.Task<WcfServiceExample.CompositeType> GetDataUsingDataContractAsync(WcfServiceExample.CompositeType composite) {
             return base.Channel.GetDataUsingDataContractAsync(composite);
         }
         
-        public WcfClient.ServiceReference1.ContractInfo[] GetContractsInfo() {
+        public WcfServiceExample.ContractInfo[] GetContractsInfo() {
             return base.Channel.GetContractsInfo();
         }
         
-        public System.Threading.Tasks.Task<WcfClient.ServiceReference1.ContractInfo[]> GetContractsInfoAsync() {
+        public System.Threading.Tasks.Task<WcfServiceExample.ContractInfo[]> GetContractsInfoAsync() {
             return base.Channel.GetContractsInfoAsync();
         }
     }

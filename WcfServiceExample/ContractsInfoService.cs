@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace WcfServiceExample
 {
@@ -36,11 +37,24 @@ namespace WcfServiceExample
         {
             var ctx = new ContractsInfoContext();
 
-            if (!ctx.ContractsInfo.Any())
-                CreateTestContracts(ctx);
+            try
+            {
+                if (!ctx.ContractsInfo.Any())
+                    CreateTestContracts(ctx);
 
-            var forReturn = ctx.ContractsInfo.ToArray();
-            return forReturn;
+                var forReturn = ctx.ContractsInfo.ToArray();
+                return forReturn;
+            }
+            catch (Exception e)
+            {
+                return Array.Empty<ContractInfo>();
+            }
+        }
+
+        private bool ContractsIsEmpty()
+        {
+            var ctx = new ContractsInfoContext();
+            return !ctx.ContractsInfo.Any();
         }
 
         public void CreateTestContracts(ContractsInfoContext context)
